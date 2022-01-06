@@ -145,7 +145,7 @@ struct WidgetListRow: View {
 
     var body: some View {
         WithViewStore(store) { viewStore in
-            NavigationLink(
+            ProxyNavigationLink(
                 unwrapping: viewStore.binding(\.$route),
                 case: /WidgetListRowState.Route.detail,
                 destination: { _ in WidgetDetail() },
