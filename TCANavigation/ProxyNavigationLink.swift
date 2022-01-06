@@ -2,9 +2,12 @@ import SwiftUI
 import SwiftUINavigation
 
 struct ProxyNavigationLink<Label: View, Destination: View>: View {
-    @State var _isActive: Bool = false
+    @State
+    var isActiveInternal: Bool = false
 
-    private let binding: Binding<Bool>
+    @Binding
+    private var isActive: Bool
+
     private let content: (Binding<Bool>) -> NavigationLink<Label, Destination>
 
     public init(
@@ -12,7 +15,7 @@ struct ProxyNavigationLink<Label: View, Destination: View>: View {
         isActive: Binding<Bool>,
         label: @escaping () -> Label
     ) {
-        self.binding = isActive
+        self._isActive = isActive
         self.content = { $isActive in
             NavigationLink(
                 isActive: $isActive,
@@ -35,9 +38,19 @@ struct ProxyNavigationLink<Label: View, Destination: View>: View {
     }
 
     var body: some View {
-        self.content($_isActive).onChange(of: _isActive) { newValue in
-            self.binding.wrappedValue = newValue
-        }
+        self.content($isActiveInternal).synchronize($isActiveInternal, _isActive)
+    }
+}
+
+extension View {
+    // From: https://tinyurl.com/m2445bf2
+    func synchronize<Value: Equatable>(
+        _ first: Binding<Value>,
+        _ second: Binding<Value>
+    ) -> some View {
+        self
+            .onChange(of: first.wrappedValue) { second.wrappedValue = $0 }
+            .onChange(of: second.wrappedValue) { first.wrappedValue = $0 }
     }
 }
 

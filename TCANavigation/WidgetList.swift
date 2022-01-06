@@ -22,6 +22,7 @@ extension WidgetListState {
 enum WidgetListAction: Equatable, BindableAction {
     case binding(BindingAction<WidgetListState>)
     case row(id: UUID, action: WidgetListRowAction)
+    case performTestNavigation
 }
 
 struct WidgetListEnvironment {}
@@ -35,6 +36,11 @@ let _widgetListReducer = Reducer<
     case .binding:
         return .none
     case .row:
+        return .none
+    case .performTestNavigation:
+        var row = state.widgets[0]
+        row.route = .detail(.init(widget: row.widget))
+        state.widgets[id: row.id] = row
         return .none
     }
 }
@@ -135,6 +141,11 @@ struct WidgetList: View {
                     content: WidgetListRow.init
                 )
             }
+//            .onAppear {
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//                    ViewStore(store).send(.performTestNavigation)
+//                }
+//            }
         }
         .navigationTitle("Widgets")
     }
