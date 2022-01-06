@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A33527602785ED6A005D391A /* TCANavigationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A335275F2785ED6A005D391A /* TCANavigationHelpers.swift */; };
+		A335276227874C58005D391A /* ProxyNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A335276127874C58005D391A /* ProxyNavigationLink.swift */; };
 		A37DB1962784BEEB00F64216 /* TCANavigationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37DB1952784BEEB00F64216 /* TCANavigationApp.swift */; };
 		A37DB1982784BEEB00F64216 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37DB1972784BEEB00F64216 /* ContentView.swift */; };
 		A37DB19A2784BEED00F64216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A37DB1992784BEED00F64216 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		A335275F2785ED6A005D391A /* TCANavigationHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCANavigationHelpers.swift; sourceTree = "<group>"; };
+		A335276127874C58005D391A /* ProxyNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyNavigationLink.swift; sourceTree = "<group>"; };
 		A37DB1922784BEEB00F64216 /* TCANavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCANavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A37DB1952784BEEB00F64216 /* TCANavigationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCANavigationApp.swift; sourceTree = "<group>"; };
 		A37DB1972784BEEB00F64216 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				A37DB19B2784BEED00F64216 /* Preview Content */,
 				A37DB1AB2784C83D00F64216 /* WidgetList.swift */,
 				A335275F2785ED6A005D391A /* TCANavigationHelpers.swift */,
+				A335276127874C58005D391A /* ProxyNavigationLink.swift */,
 			);
 			path = TCANavigation;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A33527602785ED6A005D391A /* TCANavigationHelpers.swift in Sources */,
+				A335276227874C58005D391A /* ProxyNavigationLink.swift in Sources */,
 				A37DB1982784BEEB00F64216 /* ContentView.swift in Sources */,
 				A37DB1962784BEEB00F64216 /* TCANavigationApp.swift in Sources */,
 				A37DB1AC2784C83D00F64216 /* WidgetList.swift in Sources */,
